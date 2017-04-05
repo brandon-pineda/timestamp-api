@@ -4,7 +4,7 @@ var express = require('express')
 var moment = require('moment')
 const path = require('path')
 var app = express()
-
+app.set('port', (process.env.PORT || 8080));
 app.use(express.static(path.resolve(__dirname, 'static')))
 app.get('/:timestamp', (req,res) => {
   let time = moment(req.params.timestamp, 'MMMM DD, YYYY', true);
@@ -24,6 +24,6 @@ app.get('/:timestamp', (req,res) => {
   });
 });
 
- app.listen(process.env.PORT || 8080, function () {
-  console.log('Example app listening on port 8080!')
-})
+app.listen(app.get('port'), () => {
+  console.log(`Server listening on port ${app.get('port')}`);
+});
