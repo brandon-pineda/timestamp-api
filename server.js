@@ -8,7 +8,7 @@ const app = express();
 
 app.set('port', (process.env.PORT || 8080));
 
-app.use(express.static(path.resolve(__dirname, 'client')));
+app.use(express.static(path.resolve(__dirname, 'static')));
 app.get('/:timestamp', (req,res) => {
   let time = moment(req.params.timestamp, 'MMMM DD, YYYY', true);
   if (!time.isValid())
