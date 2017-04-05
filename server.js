@@ -2,8 +2,10 @@
 
 var express = require('express')
 var moment = require('moment')
+const path = require('path')
 var app = express()
 
+app.use(express.static(path.resolve(__dirname, 'static')))
 app.get('/:timestamp', (req,res) => {
   let time = moment(req.params.timestamp, 'MMMM DD, YYYY', true);
   if (!time.isValid())
