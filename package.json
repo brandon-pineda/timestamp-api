@@ -1,14 +1,26 @@
 {
   "name": "timestamp",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.2"
-  }
+    "express": "^4.15.2",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandon-pineda/timestamp-api.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/brandon-pineda/timestamp-api/issues"
+  },
+  "homepage": "https://github.com/brandon-pineda/timestamp-api#readme",
+  "description": ""
 }
