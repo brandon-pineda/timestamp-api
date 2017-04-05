@@ -1,11 +1,14 @@
-'use strict'
+'use strict';
 
-var express = require('express')
-var moment = require('moment')
-const path = require('path')
-var app = express()
+const path = require('path');
+const moment = require('moment');
+
+const express = require('express');
+const app = express();
+
 app.set('port', (process.env.PORT || 8080));
-app.use(express.static(path.resolve(__dirname, 'static')))
+
+app.use(express.static(path.resolve(__dirname, 'client')));
 app.get('/:timestamp', (req,res) => {
   let time = moment(req.params.timestamp, 'MMMM DD, YYYY', true);
   if (!time.isValid())
